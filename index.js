@@ -2,17 +2,20 @@
  * Node-JS Boilerplate
  * @author Joshua Lazar
  */
-require("dotenv").config();
-const app = require("express")();
+require('dotenv').config();
+const app = require('express')();
 const port = process.env.PORT || 5000;
-require("./database");
+require('./database');
 
 // Middleware
-require("./middleware/common")(app);
+require('./middleware/common')(app);
 
 // API Routes
-app.use("/api", require("./routes"));
+app.use('/api', require('./routes'));
 
+app.get('/prod', function (req, res) {
+  res.send('Hello World');
+});
 // Server
 app.listen(port, () => {
   console.log(`Server is running at port ${port} :)`);
