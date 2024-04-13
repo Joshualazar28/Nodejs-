@@ -14,7 +14,7 @@ require('./middleware/common')(app);
 app.use('/api', require('./routes'));
 
 app.get('/prod', function (req, res) {
-  res.send('Hello World');
+  res.send('Hello World QA');
 });
 // Server
 app.listen(port, () => {
